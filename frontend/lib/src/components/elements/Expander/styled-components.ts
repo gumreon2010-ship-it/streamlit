@@ -15,9 +15,9 @@
  */
 
 import styled from "@emotion/styled"
-import { transparentize } from "color2k"
 
 import { STALE_STYLES, STALE_TRANSITION_PARAMS } from "~lib/theme"
+import { getPrimaryFocusRingBoxShadow } from "~lib/theme/utils"
 
 export interface StyledExpandableContainerProps {
   empty: boolean
@@ -86,7 +86,7 @@ export const StyledSummary = styled.summary<StyledSummaryProps>(
       outline: "none",
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 0.2rem ${transparentize(theme.colors.primary, 0.5)}`,
+      boxShadow: getPrimaryFocusRingBoxShadow(theme),
     },
     fontSize: "inherit",
     paddingLeft: theme.spacing.md,
